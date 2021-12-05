@@ -320,3 +320,16 @@ form .btn {
     max-height: 50vh;
   }
 }
+
+.dark {
+  background-color: #202020;
+  color: white;
+}
+
+.dark-2 {
+  background-color: #181818;
+}
+
+.dark-3 {
+  color: #e6e6e6;
+}

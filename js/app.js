@@ -1,4 +1,14 @@
+"use strict";
+
+const body = document.getElementById("container");
 const header = document.querySelector(".header");
+const main = document.querySelector(".main");
+const footer = document.querySelector(".footer");
+const socials = document.querySelectorAll(".social-icon");
+const bulb = document.querySelector(".icon--bulb");
+const time = document.getElementById("time");
+const inputs = document.querySelectorAll("input");
+const textArea = document.querySelector("textarea");
 
 header.innerHTML = `
   <div class="logo">
@@ -13,7 +23,7 @@ header.innerHTML = `
   </nav>
 `;
 
-const time = document.getElementById("time");
+const links = document.querySelectorAll("a");
 
 if (time) {
   const getTime = function () {
@@ -28,3 +38,70 @@ if (time) {
 
   getTime();
 }
+
+const darkMode = function () {
+  let dark = localStorage.getItem("dark");
+
+  if (dark === "" || dark === "false") {
+    dark = false;
+  } else {
+    dark = true;
+  }
+
+  if (dark) {
+    bulb.style.fill = "green";
+
+    body.classList.add("dark");
+    header.classList.add("dark");
+    main.classList.add("dark-2");
+    textArea && textArea.classList.add("dark");
+
+    inputs.forEach((input) => {
+      input.classList.add("dark");
+    });
+
+    socials.forEach((icon) => {
+      icon.classList.add("dark-3");
+    });
+
+    links.forEach((link) => {
+      link.classList.add("dark");
+    });
+  } else {
+    bulb.style.fill = "";
+
+    body.classList.remove("dark");
+    header.classList.remove("dark");
+    main.classList.remove("dark-2");
+    textArea && textArea.classList.remove("dark");
+
+    inputs.forEach((input) => {
+      input.classList.remove("dark");
+    });
+
+    socials.forEach((icon) => {
+      icon.classList.remove("dark-3");
+    });
+
+    links.forEach((link) => {
+      link.classList.remove("dark");
+    });
+  }
+};
+
+bulb.addEventListener("click", () => {
+  let dark = localStorage.getItem("dark");
+
+  if (dark === "" || dark === "false") {
+    dark = false;
+  } else {
+    dark = true;
+  }
+
+  dark = !dark;
+  localStorage.setItem("dark", dark);
+
+  darkMode();
+});
+
+darkMode();

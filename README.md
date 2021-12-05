@@ -8,7 +8,7 @@ This is a web portfolio of David Kiama. It showcases some of his projects, his b
 
 ## Demo
 
-[Live Demo]()
+[Live Demo](https://davidkiama.github.io/Portfolio/)
 
 ## Technologies Used
 
@@ -22,7 +22,7 @@ This is a web portfolio of David Kiama. It showcases some of his projects, his b
 
 ## Project setup and instructions
 
-I have deployed the page and here is the [link](). You can also download the entire folder and open the html file on your browser.
+I have deployed the page and here is the [link](https://davidkiama.github.io/Portfolio/). You can also download the entire folder and open the html file on your browser.
 
 ## Support and contact details
 

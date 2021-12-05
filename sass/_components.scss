@@ -1,0 +1,36 @@
+.icon {
+  position: fixed;
+  top: 9rem;
+  left: 0.5rem;
+}
+
+.icon--bulb {
+  fill: $color-navy;
+  height: 3rem;
+  width: 3rem;
+}
+
+.con {
+  @include flex-center;
+  flex-direction: column;
+  margin-left: 1rem;
+
+  &--circle {
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid $color-green;
+    border-radius: 100px;
+  }
+
+  &::before {
+    @include line-prop;
+  }
+}
+
+.heading-3 {
+  font-size: 5rem;
+}
+
+.heading-4 {
+  font-size: 3.5rem;
+}

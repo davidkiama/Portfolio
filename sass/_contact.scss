@@ -1,0 +1,47 @@
+.contact {
+  width: 90%;
+  padding: 2rem 10%;
+  margin: 0 auto;
+
+  &__heading {
+    text-align: center;
+    line-height: 1;
+  }
+}
+
+form {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 1.5rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    border: 2px solid $color-green;
+    background-color: $color-grey-dark;
+    border-right: none;
+    border-bottom: none;
+
+    font-size: 2rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .btn {
+    border: none;
+    align-self: center;
+    justify-self: center;
+    width: fit-content;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+  }
+}

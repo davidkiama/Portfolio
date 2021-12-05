@@ -1,0 +1,29 @@
+.content-work {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  justify-content: center;
+  justify-items: center;
+  padding: 2rem;
+
+  column-gap: 3rem;
+  row-gap: 5rem;
+  & .card {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .content-work {
+    & .card {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 36.5em) {
+  .content-work {
+    & .card {
+      width: 70%;
+    }
+  }
+}

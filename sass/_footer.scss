@@ -1,0 +1,45 @@
+.footer {
+  flex: 0 0 16rem;
+  background-color: $color-dark-1;
+
+  position: relative;
+
+  @include flex-center;
+  justify-content: flex-start;
+}
+
+.circle {
+  @include flex-center;
+
+  &::before {
+    @include line-prop;
+    width: 12rem;
+    height: 0.1rem;
+    margin-left: 1rem;
+  }
+
+  &--outer,
+  &--inner {
+    display: block;
+    border: 1.5px solid $color-white;
+    border-radius: 100px;
+  }
+
+  &--outer {
+    height: 10rem;
+    width: 10rem;
+
+    @include flex-center;
+  }
+  &--inner {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.copyright {
+  color: $color-white;
+  align-self: flex-end;
+  margin-left: auto;
+  padding: 2rem;
+}

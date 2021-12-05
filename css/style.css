@@ -92,6 +92,101 @@ body {
   border-bottom: 2px solid green;
 }
 
+.main {
+  flex: 1 0 auto;
+  background-color: #e6e6e6;
+}
+
+.content {
+  margin-left: 3rem;
+}
+
+.content-home {
+  margin: 10rem auto 15rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 20rem;
+}
+
+.social-icons {
+  width: 32rem;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  color: #202020;
+}
+.social-icons .social-icon {
+  fill: currentColor;
+  height: 6rem;
+  width: 6rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.social-icons .social-icon:hover {
+  transform: scale(1.09);
+}
+
+.card {
+  width: 80rem;
+  padding: 3rem;
+  padding-left: 4rem;
+  position: relative;
+  box-shadow: 1px 5px 20px -6px rgba(0, 0, 0, 0.75);
+}
+.card__heading {
+  border-bottom: 5px solid green;
+}
+.card .con {
+  position: absolute;
+  top: 5rem;
+  left: -0.5rem;
+  height: 100%;
+}
+.card .con--circle {
+  margin-top: 10px;
+  border-width: 3px;
+}
+.card .con::before {
+  height: 50%;
+  width: 0.2rem;
+}
+.card__text {
+  font-size: 2rem;
+}
+
+.clock {
+  width: 32rem;
+  height: 20rem;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.clock::before,
+.clock::after {
+  content: "";
+  background-color: green;
+  width: 0.12rem;
+  display: block;
+  width: 50%;
+  height: 3px;
+  transform: perspective(10px) rotateX(1deg);
+}
+
+#time {
+  font-size: 5.2rem;
+  font-family: "Orbitron", sans-serif;
+  margin: 3rem auto;
+}
+
 .footer {
   flex: 0 0 12rem;
   background-color: #202020;

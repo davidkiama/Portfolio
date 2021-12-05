@@ -13,6 +13,10 @@ const textArea = document.querySelector("textarea");
 header.innerHTML = `
   <div class="logo">
     <h1 class="logo__name">David Kiama</h1>
+
+    <svg class="icon--computer">
+      <use xlink:href="img/sprite.svg#computer-svgrepo-com"></use>
+    </svg>
   </div>
 
   <nav class="nav">
@@ -23,7 +27,7 @@ header.innerHTML = `
   </nav>
 `;
 
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll(".nav__item");
 
 if (time) {
   const getTime = function () {

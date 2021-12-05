@@ -241,3 +241,46 @@ body {
 .content-work .card {
   width: 100%;
 }
+
+.contact {
+  width: 90%;
+  padding: 2rem 10%;
+  margin: 0 auto;
+}
+.contact__heading {
+  text-align: center;
+  line-height: 1;
+}
+
+form {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+form input,
+form textarea {
+  margin-bottom: 1.5rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  border: 2px solid green;
+  background-color: #cccccc;
+  border-right: none;
+  border-bottom: none;
+  font-size: 2rem;
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+}
+form .btn {
+  border: none;
+  align-self: center;
+  justify-self: center;
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+}

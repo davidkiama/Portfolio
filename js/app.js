@@ -5,7 +5,8 @@ const header = document.querySelector(".header");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const socials = document.querySelectorAll(".social-icon");
-const bulb = document.querySelector(".icon--bulb");
+const bulbIcon = document.querySelector(".icon--bulb");
+
 const time = document.getElementById("time");
 const inputs = document.querySelectorAll("input");
 const textArea = document.querySelector("textarea");
@@ -28,6 +29,7 @@ header.innerHTML = `
 `;
 
 const links = document.querySelectorAll(".nav__item");
+const compIcon = document.querySelector(".icon--computer");
 
 if (time) {
   const getTime = function () {
@@ -53,7 +55,8 @@ const darkMode = function () {
   }
 
   if (dark) {
-    bulb.style.fill = "green";
+    bulbIcon.style.fill = "green";
+    compIcon.style.fill = "green";
 
     body.classList.add("dark");
     header.classList.add("dark");
@@ -72,7 +75,8 @@ const darkMode = function () {
       link.classList.add("dark");
     });
   } else {
-    bulb.style.fill = "";
+    bulbIcon.style.fill = "";
+    compIcon.style.fill = "";
 
     body.classList.remove("dark");
     header.classList.remove("dark");
@@ -93,7 +97,7 @@ const darkMode = function () {
   }
 };
 
-bulb.addEventListener("click", () => {
+bulbIcon.addEventListener("click", () => {
   let dark = localStorage.getItem("dark");
 
   if (dark === "" || dark === "false") {

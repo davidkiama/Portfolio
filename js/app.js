@@ -28,6 +28,18 @@ header.innerHTML = `
   </nav>
 `;
 
+footer.innerHTML = `
+<div class="con"><span class="con--circle"> </span></div>
+<div class="circle">
+  <span class="circle--outer">
+    <span class="circle--inner"> &nbsp; </span>
+  </span>
+</div>
+<h3 class="copyright">Copyright &copy; 2021. David Kiama</h3>
+
+
+
+`;
 const links = document.querySelectorAll(".nav__item");
 const compIcon = document.querySelector(".icon--computer");
 

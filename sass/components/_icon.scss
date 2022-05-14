@@ -1,0 +1,27 @@
+.icon {
+  position: fixed;
+  top: 9rem;
+  left: 0.5rem;
+
+  &--bulb {
+    fill: #03031b;
+    height: 3rem;
+    width: 3rem;
+    margin-left: -1rem;
+  }
+
+  &--computer {
+    fill: #03031b;
+    margin-left: 1rem;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  &--hamburger {
+    margin-left: 1rem;
+    height: 3rem;
+    width: 3rem;
+
+    display: none;
+  }
+}

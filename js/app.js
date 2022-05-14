@@ -37,12 +37,8 @@ header.innerHTML = `
 
 footer.innerHTML = `
 <div class="con"><span class="con--circle"> </span></div>
-<div class="circle">
-  <span class="circle--outer">
-    <span class="circle--inner"> &nbsp; </span>
-  </span>
-</div>
-<h3 class="copyright">Copyright &copy; 2022. David Kiama</h3>
+<h3 class="copyright">Made with by ❤️ David Kiama.</h3>
+<div class="con"><span class="con--circle"> </span></div>
 
 
 

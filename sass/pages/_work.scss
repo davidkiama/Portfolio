@@ -1,12 +1,12 @@
 .content-work {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  display: flex;
   justify-content: center;
   justify-items: center;
+  flex-wrap: wrap;
   padding: 2rem;
   column-gap: 5rem;
   row-gap: 5rem;
 }
-.content-work .card {
-  width: 100%;
-}
+// .content-work .card {
+//   width: 100%;
+// }

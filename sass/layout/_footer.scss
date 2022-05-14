@@ -1,9 +1,10 @@
 .footer {
-  flex: 0 0 18rem;
+  flex: 0 0 12rem;
   background-color: #202020;
+  padding: 1rem;
 
   display: flex;
-  align-items: end;
+  align-items: stretch;
   justify-content: space-between;
 }
 
@@ -47,4 +48,5 @@
   color: white;
   text-align: center;
   width: 100%;
+  align-self: end;
 }

@@ -1,0 +1,51 @@
+.footer {
+  flex: 0 0 12rem;
+  background-color: #202020;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  position: relative;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle::before {
+  content: "";
+  background-color: green;
+  width: 0.12rem;
+  display: block;
+  width: 12rem;
+  height: 0.1rem;
+  margin-left: 1rem;
+}
+.circle--outer,
+.circle--inner {
+  display: block;
+  border: 1.5px solid white;
+  border-radius: 100px;
+}
+.circle--outer {
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle--inner {
+  height: 6rem;
+  width: 6rem;
+}
+
+.copyright {
+  color: white;
+
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

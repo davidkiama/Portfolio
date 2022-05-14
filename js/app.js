@@ -25,7 +25,14 @@ header.innerHTML = `
     <a href="work.html" class="nav__item">Work</a>
     <a href="gallery.html" class="nav__item">Gallery</a>
     <a href="contact.html" class="nav__item">Contact</a>
+
+    
   </nav>
+  <svg class="icon--hamburger">
+    <use xlink:href="img/sprite.svg#hamburger-menu"></use>
+  </svg>
+
+  
 `;
 
 footer.innerHTML = `
@@ -35,13 +42,15 @@ footer.innerHTML = `
     <span class="circle--inner"> &nbsp; </span>
   </span>
 </div>
-<h3 class="copyright">Copyright &copy; 2021. David Kiama</h3>
+<h3 class="copyright">Copyright &copy; 2022. David Kiama</h3>
 
 
 
 `;
+const nav = document.querySelector(".nav");
 const links = document.querySelectorAll(".nav__item");
 const compIcon = document.querySelector(".icon--computer");
+const iconHamburger = document.querySelector(".icon--hamburger");
 
 if (time) {
   const getTime = function () {
@@ -71,7 +80,7 @@ const darkMode = function () {
     compIcon.style.fill = "green";
 
     body.classList.add("dark");
-    header.classList.add("dark");
+    header.classList.add("dark-header");
     main.classList.add("dark-2");
     textArea && textArea.classList.add("dark");
 
@@ -91,7 +100,7 @@ const darkMode = function () {
     compIcon.style.fill = "";
 
     body.classList.remove("dark");
-    header.classList.remove("dark");
+    header.classList.remove("dark-header");
     main.classList.remove("dark-2");
     textArea && textArea.classList.remove("dark");
 
@@ -109,7 +118,7 @@ const darkMode = function () {
   }
 };
 
-bulbIcon.addEventListener("click", () => {
+bulbIcon.addEventListener("click", function () {
   let dark = localStorage.getItem("dark");
 
   if (dark === "" || dark === "false") {
@@ -125,3 +134,19 @@ bulbIcon.addEventListener("click", () => {
 });
 
 darkMode();
+
+// Menu display
+
+let displayMenu = false;
+
+iconHamburger.addEventListener("click", function () {
+  displayMenu = !displayMenu;
+  if (displayMenu) {
+    nav.classList.add("display_menu");
+    iconHamburger.style.color = "#e6e6e6";
+  } else {
+    iconHamburger.style.color = "inherit";
+    nav.classList.remove("display_menu");
+  }
+  console.log(displayMenu);
+});

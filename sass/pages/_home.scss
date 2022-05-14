@@ -1,0 +1,66 @@
+.content-home {
+  margin: 10rem auto 15rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 20rem;
+}
+
+.clock {
+  width: 32rem;
+  height: 20rem;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: green;
+    width: 0.12rem;
+    display: block;
+    width: 50%;
+    height: 3px;
+    transform: perspective(10px) rotateX(1deg);
+  }
+}
+
+#time {
+  font-size: 5.2rem;
+  font-family: "Orbitron", sans-serif;
+  margin: 3rem auto;
+}
+
+.social-icons {
+  width: 32rem;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  color: #202020;
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  & .social-icon {
+    fill: currentColor;
+
+    height: 6rem;
+    width: 6rem;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.09);
+    }
+  }
+}

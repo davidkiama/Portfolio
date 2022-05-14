@@ -41,6 +41,14 @@ body {
   .card__text {
     font-size: 2rem;
     hyphens: auto; }
+  .card a {
+    text-decoration: none;
+    background-image: linear-gradient(to right, green, green);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+    .card a:hover {
+      background-image: linear-gradient(to right, #7ed56f, #28b485); }
 
 .con {
   display: inline-flex;
@@ -62,9 +70,6 @@ body {
     display: block;
     height: 80%;
     width: 0.2rem; }
-  .con a {
-    text-decoration: none;
-    color: #551a8b; }
 
 .heading-3 {
   font-size: 5rem; }
@@ -93,12 +98,22 @@ body {
     display: none; }
 
 .footer {
-  flex: 0 0 12rem;
+  flex: 0 0 14rem;
   background-color: #202020;
   padding: 1rem;
   display: flex;
   align-items: stretch;
   justify-content: space-between; }
+  .footer__icons {
+    width: 10rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  .footer__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #e6e6e6; }
 
 .copyright {
   color: white;

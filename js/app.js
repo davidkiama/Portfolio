@@ -37,7 +37,34 @@ header.innerHTML = `
 
 footer.innerHTML = `
 <div class="con"><span class="con--circle"> </span></div>
-<h3 class="copyright">Made with by ❤️ David Kiama.</h3>
+
+
+<div class="copyright">
+  <div class="footer__icons">
+
+    <a href="https://github.com/davidkiama" target="blank">
+      <svg class="footer__icon">
+        <use xlink:href="img/sprite.svg#github-svgrepo-com"></use>
+      </svg>
+      </a>
+
+    <a href="https://www.linkedin.com/in/david-kiama-a8a8b817b/" target="blank">
+      <svg class="footer__icon">
+        <use xlink:href="img/sprite.svg#linkedin-svgrepo-com"></use>
+      </svg>
+    </a>
+
+    <a href="https://twitter.com/certifiedkiama" target="blank">
+      <svg class="footer__icon">
+        <use xlink:href="img/sprite.svg#twitter-svgrepo-com"></use>
+      </svg>
+    </a>
+
+    
+  </div>
+  <h3>Made with by ❤️ David Kiama.</h3>
+</div>
+
 <div class="con"><span class="con--circle"> </span></div>
 
 
@@ -144,5 +171,4 @@ iconHamburger.addEventListener("click", function () {
     iconHamburger.style.color = "inherit";
     nav.classList.remove("display_menu");
   }
-  console.log(displayMenu);
 });

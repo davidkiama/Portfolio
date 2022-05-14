@@ -22,6 +22,18 @@
     font-size: 2rem;
     hyphens: auto;
   }
+
+  & a {
+    text-decoration: none;
+    background-image: linear-gradient(to right, green, green);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    &:hover {
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+    }
+  }
 }
 
 .con {
@@ -47,10 +59,5 @@
     display: block;
     height: 80%;
     width: 0.2rem;
-  }
-
-  & a {
-    text-decoration: none;
-    color: rgb(85, 26, 139);
   }
 }

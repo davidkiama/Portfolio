@@ -11,6 +11,13 @@
   .card {
     width: 80rem;
   }
+
+  // for larger screens
+  @media only screen and (min-width: 100em) {
+    .card {
+      width: 100rem;
+    }
+  }
 }
 
 .clock {
@@ -66,5 +73,13 @@
     &:hover {
       transform: scale(1.09);
     }
+  }
+}
+
+// for larger screens
+@media only screen and (min-width: 100em) {
+  .clock {
+    width: 42rem;
+    height: 30rem;
   }
 }

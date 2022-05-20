@@ -5,7 +5,6 @@ const header = document.querySelector(".header");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const socials = document.querySelectorAll(".social-icon");
-const bulbIcon = document.querySelector(".icon--bulb");
 
 const time = document.getElementById("time");
 const inputs = document.querySelectorAll("input");
@@ -24,6 +23,15 @@ header.innerHTML = `
     <a href="index.html" class="nav__item">About</a>
     <a href="projects.html" class="nav__item">Projects</a>
     <a href="contact.html" class="nav__item">Contact</a>
+
+
+    <div class="icon">
+      <svg class="icon--theme">
+        <use xlink:href="img/sprite.svg#moon-svgrepo-com"></use>
+      </svg>
+    </div>
+
+    
 
     
   </nav>
@@ -69,6 +77,8 @@ footer.innerHTML = `
 
 
 `;
+
+const moonIcon = document.querySelector(".icon--theme");
 const nav = document.querySelector(".nav");
 const links = document.querySelectorAll(".nav__item");
 const compIcon = document.querySelector(".icon--computer");
@@ -98,7 +108,7 @@ const darkMode = function () {
   }
 
   if (dark) {
-    bulbIcon.style.fill = "green";
+    moonIcon.style.fill = "green";
     compIcon.style.fill = "green";
 
     body.classList.add("dark");
@@ -118,7 +128,7 @@ const darkMode = function () {
       link.classList.add("dark");
     });
   } else {
-    bulbIcon.style.fill = "";
+    moonIcon.style.fill = "";
     compIcon.style.fill = "";
 
     body.classList.remove("dark");
@@ -140,7 +150,7 @@ const darkMode = function () {
   }
 };
 
-bulbIcon.addEventListener("click", function () {
+moonIcon.addEventListener("click", function () {
   let dark = localStorage.getItem("dark");
 
   if (dark === "" || dark === "false") {

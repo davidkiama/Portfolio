@@ -99,10 +99,9 @@ body {
   font-size: 3.5rem; }
 
 .icon {
-  position: fixed;
   top: 9rem;
   left: 0.5rem; }
-  .icon--bulb {
+  .icon--theme {
     fill: #03031b;
     height: 3rem;
     width: 3rem;

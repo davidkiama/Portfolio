@@ -13,7 +13,7 @@ const textArea = document.querySelector("textarea");
 
 header.innerHTML = `
   <div class="logo">
-    <h1 class="logo__name">David Kiama</h1>
+    <h1 class="logo__name"> <a href="index.html" >David Kiama</a> </h1>
 
     <svg class="icon--computer">
       <use xlink:href="img/sprite.svg#computer-svgrepo-com"></use>
@@ -22,8 +22,7 @@ header.innerHTML = `
 
   <nav class="nav">
     <a href="index.html" class="nav__item">About</a>
-    <a href="work.html" class="nav__item">Work</a>
-    <a href="gallery.html" class="nav__item">Gallery</a>
+    <a href="projects.html" class="nav__item">Projects</a>
     <a href="contact.html" class="nav__item">Contact</a>
 
     

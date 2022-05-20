@@ -19,6 +19,24 @@ body {
   flex-direction: column;
   position: relative; }
 
+@media only screen and (min-width: 100em) {
+  html {
+    font-size: 68.5%; }
+  body {
+    font-size: 1.6rem; } }
+
+@media only screen and (min-width: 125em) {
+  html {
+    font-size: 78.5%; }
+  body {
+    font-size: 1.9rem; } }
+
+@media only screen and (min-width: 162.5em) {
+  html {
+    font-size: 90%; }
+  body {
+    font-size: 2.1rem; } }
+
 @media only screen and (max-width: 37.5em) {
   html {
     font-size: 58%; } }
@@ -41,6 +59,9 @@ body {
   .card__text {
     font-size: 2rem;
     hyphens: auto; }
+    .card__text ul {
+      list-style: none;
+      margin-left: 2rem; }
   .card a {
     text-decoration: none;
     background-image: linear-gradient(to right, green, green);
@@ -138,6 +159,10 @@ body {
   display: flex;
   align-items: center; }
 
+.logo__name a {
+  text-decoration: none;
+  color: inherit; }
+
 .nav {
   flex-grow: 0.4;
   display: flex;
@@ -180,7 +205,8 @@ body {
 
 .main {
   flex: 1 0 auto;
-  background-color: #e6e6e6; }
+  background-color: #e6e6e6;
+  min-height: 80vh; }
 
 .content {
   margin-top: 3rem;
@@ -286,6 +312,9 @@ form .btn {
   row-gap: 20rem; }
   .content-home .card {
     width: 80rem; }
+  @media only screen and (min-width: 100em) {
+    .content-home .card {
+      width: 100rem; } }
 
 .clock {
   width: 32rem;
@@ -329,6 +358,11 @@ form .btn {
     transition: all 0.5s; }
     .social-icons .social-icon:hover {
       transform: scale(1.09); }
+
+@media only screen and (min-width: 100em) {
+  .clock {
+    width: 42rem;
+    height: 30rem; } }
 
 .dark-header {
   background-color: rgba(33, 33, 33, 0.95); }

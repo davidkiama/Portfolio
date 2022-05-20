@@ -21,6 +21,11 @@
   &__text {
     font-size: 2rem;
     hyphens: auto;
+
+    & ul {
+      list-style: none;
+      margin-left: 2rem;
+    }
   }
 
   & a {

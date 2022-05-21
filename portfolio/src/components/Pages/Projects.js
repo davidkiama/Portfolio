@@ -1,8 +1,8 @@
 import React from "react";
 
-function Projects() {
+function Projects({ darkMode }) {
   return (
-    <main className="main">
+    <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-work">
         <div className="card">
           <h4 className="heading-4 card__heading">Burger Palace</h4>

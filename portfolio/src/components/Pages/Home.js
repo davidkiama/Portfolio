@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function Home() {
+function Home({ darkMode }) {
   const [time, setTime] = useState("");
 
   const getTime = function () {
@@ -17,7 +18,7 @@ function Home() {
   }, [time]);
 
   return (
-    <main className="main">
+    <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-home">
         <div className="card">
           <h3 className="heading-3 card__heading">About me</h3>
@@ -31,12 +32,11 @@ function Home() {
               Moringa School. The experience is awesome. Having to learn and work on projects together with
               like-minded individuals is nothing short of amazing.
               <br />
-              <a href="work.html">Here</a> are some of my projects.
+              <Link to="/projects">Here</Link> are some of my projects.
               <br />
               My interests include football, swimming, playing chess and hanging out with like-minded
               individuals.
               <br />
-              <a href="gallery.html"> Here</a> is a gallery that highlight some of my interests.
             </p>
           </div>
         </div>
@@ -47,25 +47,25 @@ function Home() {
 
         <div className="social-icons">
           <a target="blank" href="https://github.com/davidkiama">
-            <svg className="social-icon">
+            <svg className={`${darkMode ? "dark-3" : ""} social-icon`}>
               <use xlinkHref="img/sprite.svg#github-svgrepo-com"></use>
             </svg>
           </a>
 
           <a target="blank" href="https://wa.me/254799760500?text=Dev">
-            <svg className="social-icon">
+            <svg className={`${darkMode ? "dark-3" : ""} social-icon`}>
               <use xlinkHref="img/sprite.svg#whatsapp-svgrepo-com"></use>
             </svg>
           </a>
 
           <a target="blank" href="https://twitter.com/certifiedkiama">
-            <svg className="social-icon">
+            <svg className={`${darkMode ? "dark-3" : ""} social-icon`}>
               <use xlinkHref="img/sprite.svg#twitter-svgrepo-com"></use>
             </svg>
           </a>
 
           <a target="blank" href="https://www.linkedin.com/in/david-kiama/">
-            <svg className="social-icon">
+            <svg className={`${darkMode ? "dark-3" : ""} social-icon`}>
               <use xlinkHref="img/sprite.svg#linkedin-svgrepo-com"></use>
             </svg>
           </a>

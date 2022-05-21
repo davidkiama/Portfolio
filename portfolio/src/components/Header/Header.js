@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [displayMenu, setDisplayMenu] = useState(false);
+
+  const displayMenuFunc = () => {
+    setDisplayMenu((prevState) => !prevState);
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -15,7 +21,7 @@ function Header() {
         </svg>
       </div>
 
-      <nav className="nav">
+      <nav className={`${displayMenu ? "display_menu" : null}   nav`}>
         <Link to="/" className="nav__item">
           About
         </Link>
@@ -34,7 +40,8 @@ function Header() {
           </svg>
         </div>
       </nav>
-      <svg className="icon--hamburger">
+
+      <svg className={` ${displayMenu ? "icon--light" : null} icon--hamburger `} onClick={displayMenuFunc}>
         <use xlinkHref="img/sprite.svg#hamburger-menu"></use>
       </svg>
     </header>

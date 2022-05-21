@@ -16,20 +16,6 @@ const links = document.querySelectorAll(".nav__item");
 const compIcon = document.querySelector(".icon--computer");
 const iconHamburger = document.querySelector(".icon--hamburger");
 
-if (time) {
-  const getTime = function () {
-    const today = new Date();
-    let hour = String(today.getHours()).padStart(2, "0");
-    let min = String(today.getMinutes()).padStart(2, "0");
-
-    time.textContent = `${hour} : ${min}`;
-
-    setTimeout(getTime, 1000);
-  };
-
-  getTime();
-}
-
 const darkMode = function () {
   let dark = localStorage.getItem("dark");
 
@@ -98,18 +84,3 @@ moonIcon.addEventListener("click", function () {
 });
 
 darkMode();
-
-// Menu display
-
-let displayMenu = false;
-
-iconHamburger.addEventListener("click", function () {
-  displayMenu = !displayMenu;
-  if (displayMenu) {
-    nav.classList.add("display_menu");
-    iconHamburger.style.color = "#e6e6e6";
-  } else {
-    iconHamburger.style.color = "inherit";
-    nav.classList.remove("display_menu");
-  }
-});

@@ -148,6 +148,10 @@ body {
   display: none;
 }
 
+.icon--light {
+  color: #e6e6e6;
+}
+
 .footer {
   flex: 0 0 14rem;
   background-color: #202020;

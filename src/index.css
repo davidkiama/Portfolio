@@ -391,6 +391,12 @@ form .btn {
   }
 }
 
+.live-links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
 .clock {
   width: 32rem;
   height: 20rem;

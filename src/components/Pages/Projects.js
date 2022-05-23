@@ -5,6 +5,132 @@ function Projects({ darkMode }) {
     <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-work">
         <div className="card">
+          <h4 className="heading-4 card__heading">Bankist</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Bankist is a banking web application.
+              <br />
+              Users can deposit, withdraw, request for loans and transfer money to other users .
+              <br />
+              Technologies used: MongoDB, Express, React, NodeJs.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Bankist" target="blank">
+                  Source code
+                </a>
+                <a href="https://eloquent-kashata-a69405.netlify.app/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
+          <h4 className="heading-4 card__heading">Foto Moto</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Foto Moto is a Web image gallery.
+              <br />
+              Images are categorized with location and category. One can search and filter images according to
+              category.
+              <br />
+              Technologies used: PostgreSQL, Django, Heroku.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Foto-Moto-" target="blank">
+                  Source code
+                </a>
+                <a href="https://foto-moto.herokuapp.com/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
+          <h4 className="heading-4 card__heading">Neighbourhood</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              A web application that allows users to find and share posts in their neighbourhood.
+              <br />
+              Neighbours can also view the list of business in the neighbourhood.
+              <br />
+              Technologies used: PostgreSQL, Django, Heroku.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/NeighbourHood" target="blank">
+                  Source code
+                </a>
+                <a href="https://neighbourhood-xxiv.herokuapp.com/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
+          <h4 className="heading-4 card__heading">Quotes</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Web application that showcases quotes created on the platform.
+              <br />
+              One can create a upvote, downwnvote or delete a quote.
+              <br />
+              Technologies used: Angular, TypeScript, CSS.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Quotes" target="blank">
+                  Source code
+                </a>
+                <a href="https://davidkiama.github.io/Quotes/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
+          <h4 className="heading-4 card__heading">Github Search</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Web application that displays a Github user and all his/her public repositories.
+              <br />
+              One can search for a users using usernames.
+              <br />
+              Technologies used: Angular, TypeScript, CSS, Github.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Github-Search" target="blank">
+                  Source code
+                </a>
+                <a href="https://davidkiama.github.io/Github-Search/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
           <h4 className="heading-4 card__heading">Burger Palace</h4>
 
           <div className="card__content">
@@ -15,15 +141,20 @@ function Projects({ darkMode }) {
             <p className="card__text">
               Burger Palace is a fictional restaurant website, that sells Fingerlicking Good Burgers.
               <br />
-              This is just a replica. The original design was done by
+              This is just a replica. The original design was done by &nbsp;
               <a href="https://github.com/james-muriithi" target="blank">
                 Justin Murithi
               </a>
               <br />
-              Languages and technologies used are: HTML & CSS
-              <a href="https://davidkiama.github.io/Burger-Palace/" target="blank" className="live-link">
-                Check it out !
-              </a>
+              Technologies used : HTML & CSS
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Burger-Palace" target="blank">
+                  Source code
+                </a>
+                <a href="https://davidkiama.github.io/Burger-Palace/" target="blank">
+                  Live demo
+                </a>
+              </span>
             </p>
           </div>
         </div>
@@ -42,10 +173,15 @@ function Projects({ darkMode }) {
               This was a joint project between
               <a href="https://github.com/Lyonsmasawa"> Lyons Masawa</a> and I.
               <br />
-              Languages and technologies used include: HTML & CSS.
-              <a href="https://davidkiama.github.io/Cute-Pet/" target="blank" className="live-link">
-                Check it out !
-              </a>
+              Technologies used: HTML & CSS.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Cute-Pet" target="blank">
+                  Source code
+                </a>
+                <a href="https://davidkiama.github.io/Cute-Pet/" target="blank">
+                  Live demo
+                </a>
+              </span>
             </p>
           </div>
         </div>
@@ -60,12 +196,17 @@ function Projects({ darkMode }) {
             <p className="card__text">
               Letuce Eat is a fictional website based on the idea of Moringa Restaurant.
               <br />
-              Letuce Eat offers the best, healthy and affordalbe dishes.
+              Letuce Eat offers the best, healthy and affordable dishes.
               <br />
-              Languages and technologies used include: HTML & CSS.
-              <a href="https://davidkiama.github.io/Letuce-Eat/" target="blank" className="live-link">
-                Check it out !
-              </a>
+              Technologies used include: HTML & CSS.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Letuce-Eat" target="blank">
+                  Source code
+                </a>
+                <a href="https://davidkiama.github.io/Letuce-Eat/" target="blank">
+                  Live demo
+                </a>
+              </span>
             </p>
           </div>
         </div>

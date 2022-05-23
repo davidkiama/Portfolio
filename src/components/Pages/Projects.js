@@ -21,7 +21,7 @@ function Projects({ darkMode }) {
                 <a href="https://github.com/davidkiama/Bankist" target="blank">
                   Source code
                 </a>
-                <a href="https://eloquent-kashata-a69405.netlify.app/" target="blank">
+                <a href="https://bankist-kiama.netlify.app/" target="blank">
                   Live demo
                 </a>
               </span>

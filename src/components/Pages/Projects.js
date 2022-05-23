@@ -81,6 +81,31 @@ function Projects({ darkMode }) {
         </div>
 
         <div className="card">
+          <h4 className="heading-4 card__heading">Pitches</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Flask web app that displays pitches created on the platform by them and other users.
+              <br />
+              Users can create, upvote, downwnvote or comment on pitches.
+              <br />
+              Technologies used: PostgreSQL, Flask, Heroku.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Flask-Pitches" target="blank">
+                  Source code
+                </a>
+                <a href="https://flask-pitches.herokuapp.com/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
           <h4 className="heading-4 card__heading">Quotes</h4>
 
           <div className="card__content">

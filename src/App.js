@@ -45,15 +45,27 @@ function App() {
           </div>
 
           <nav className={`${displayMenu ? "display_menu" : ""}   nav`}>
-            <Link to="/" className={`${darkMode ? "dark-3" : ""} nav__item`}>
+            <Link
+              to="/"
+              className={`${darkMode ? "dark-3" : ""} nav__item`}
+              onClick={() => setDisplayMenu(false)}
+            >
               About
             </Link>
 
-            <Link to="/projects" className={`${darkMode ? "dark-3" : ""} nav__item`}>
+            <Link
+              to="/projects"
+              className={`${darkMode ? "dark-3" : ""} nav__item`}
+              onClick={() => setDisplayMenu(false)}
+            >
               Projects
             </Link>
 
-            <Link to="/contact" className={`${darkMode ? "dark-3" : ""} nav__item`}>
+            <Link
+              to="/contact"
+              className={`${darkMode ? "dark-3" : ""} nav__item`}
+              onClick={() => setDisplayMenu(false)}
+            >
               Contact
             </Link>
 
@@ -64,9 +76,21 @@ function App() {
             </div>
           </nav>
 
-          <svg className={` ${displayMenu ? "icon--light" : ""} icon--hamburger `} onClick={displayMenuFunc}>
-            <use xlinkHref="img/sprite.svg#hamburger-menu"></use>
-          </svg>
+          {displayMenu ? (
+            <svg
+              className={` ${displayMenu ? "icon--light" : ""} icon--hamburger `}
+              onClick={displayMenuFunc}
+            >
+              <use xlinkHref="img/sprite.svg#cancel"></use>
+            </svg>
+          ) : (
+            <svg
+              className={` ${displayMenu ? "icon--light" : ""} icon--hamburger `}
+              onClick={displayMenuFunc}
+            >
+              <use xlinkHref="img/sprite.svg#hamburger-menu"></use>
+            </svg>
+          )}
         </header>
 
         <Routes>

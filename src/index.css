@@ -64,7 +64,6 @@ body {
 }
 .card__heading {
   border-bottom: 5px solid green;
-  hyphens: auto;
 }
 .card__content {
   margin-top: 1rem;
@@ -76,7 +75,6 @@ body {
 }
 .card__text {
   font-size: 2rem;
-  hyphens: auto;
 }
 .card__text ul {
   list-style: none;
@@ -150,6 +148,7 @@ body {
 
 .icon--light {
   color: #e6e6e6;
+  fill: #e6e6e6;
 }
 
 .footer {

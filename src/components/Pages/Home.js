@@ -20,7 +20,7 @@ function Home({ darkMode }) {
   return (
     <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-home">
-        <div className="card">
+        <div className="card" draggable="true">
           <h3 className="heading-3 card__heading">About me</h3>
 
           <div className="card__content">
@@ -28,15 +28,16 @@ function Home({ darkMode }) {
               <span className="con--circle"> </span>
             </div>
             <p className="card__text">
-              Hi, I am David Kiama and I am a Software Developer. I am currently attending a bootcamp at
-              Moringa School. The experience is awesome. Having to learn and work on projects together with
-              like-minded individuals is nothing short of amazing.
+              Hi, I am David Kiama and I am a Software Developer. I build things for the web I am an avid
+              learner who continues to seek ways to build human-centered products.
               <br />
-              <Link to="/projects">Here</Link> are some of my projects.
+              <Link to="/projects">Here</Link> are some of my projects.It's only a drop in the ocean compared
+              to the entire list.
               <br />
-              My interests include football, swimming, playing chess and hanging out with like-minded
-              individuals.
+              When I'm not infront of my computer I cook, dance, develop relationships with people😂 the
+              normal stuff.
               <br />
+              My love for code is immutable.
             </p>
           </div>
         </div>

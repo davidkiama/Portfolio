@@ -127,12 +127,31 @@ body {
   top: 9rem;
   left: 0.5rem;
 }
-.icon--theme {
-  fill: #03031b;
-  height: 3rem;
-  width: 3rem;
-  margin-left: -1rem;
+
+.icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 5px 20px -6px rgba(0, 0, 0, 0.85);
+  border-radius: 100%;
+
+  height: 3.2rem;
+  width: 3.2rem;
 }
+
+.icon--theme {
+  cursor: pointer;
+  fill: #03031b;
+  height: 2.2rem;
+  width: 2.2rem;
+  transition: all 0.2s;
+}
+
+.icon-bg:hover .icon--theme {
+  height: 2.3rem;
+  width: 2.3rem;
+}
+
 .icon--computer {
   fill: #03031b;
   margin-left: 1rem;
@@ -215,6 +234,7 @@ body {
   color: black;
   position: relative;
 }
+
 .nav__item:hover::before {
   content: "";
   position: absolute;
@@ -222,6 +242,13 @@ body {
   width: 80%;
   margin: 0 10%;
   border-bottom: 2px solid green;
+}
+
+.nav__item.active {
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @media only screen and (max-width: 37.5em) {

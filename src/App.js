@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 
 // import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -45,31 +45,31 @@ function App() {
           </div>
 
           <nav className={`${displayMenu ? "display_menu" : ""}   nav`}>
-            <Link
+            <NavLink
               to="/"
               className={`${darkMode ? "dark-3" : ""} nav__item`}
               onClick={() => setDisplayMenu(false)}
             >
               About
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
               to="/projects"
               className={`${darkMode ? "dark-3" : ""} nav__item`}
               onClick={() => setDisplayMenu(false)}
             >
               Projects
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
               to="/contact"
               className={`${darkMode ? "dark-3" : ""} nav__item`}
               onClick={() => setDisplayMenu(false)}
             >
               Contact
-            </Link>
+            </NavLink>
 
-            <div className="icon" onClick={switchTheme}>
+            <div className="icon icon-bg" onClick={switchTheme}>
               <svg className="icon--theme" style={styles.headerIcons}>
                 <use xlinkHref="img/sprite.svg#moon-svgrepo-com"></use>
               </svg>

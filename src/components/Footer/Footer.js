@@ -27,7 +27,7 @@ function Footer() {
             </svg>
           </a>
         </div>
-        <h3>Made with by ❤️ David Kiama.</h3>
+        <h3>Made with ❤️ by David Kiama.</h3>
       </div>
 
       <div className="con">

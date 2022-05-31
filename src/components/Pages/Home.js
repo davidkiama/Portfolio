@@ -28,14 +28,14 @@ function Home({ darkMode }) {
               <span className="con--circle"> </span>
             </div>
             <p className="card__text">
-              Hi, I am David Kiama and I am a Software Developer. I build things for the web I am an avid
-              learner who continues to seek ways to build human-centered products.
+              Hi, I'm David Kiama, a Software Developer that builds for the web. I am an avid learner who
+              continues to seek ways to build human-centered products.
               <br />
               <Link to="/projects">Here</Link> are some of my projects.It's only a drop in the ocean compared
               to the entire list.
               <br />
-              When I'm not infront of my computer I cook, dance, develop relationships with people, the
-              normal stuff 😂.
+              When I'm not infront of my computer I cook, dance, develop relationships with people, the normal
+              stuff 😂
               <br />
               My love for code is immutable.
             </p>

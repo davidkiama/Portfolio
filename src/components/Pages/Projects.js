@@ -5,6 +5,39 @@ function Projects({ darkMode }) {
     <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-work">
         <div className="card">
+          <h4 className="heading-4 card__heading">Pizzeria-45</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              A web application for a fictional pizza restaurant.
+              <br />
+              Users can place their orders, edit the order and pay for the the pizza using crypto.
+              <br />
+              Crypto accepted
+              <span className="crypto-icons">
+                <img src="img/bitcoin.svg" alt="bitcoin" />
+                <img src="img/litecoin.svg" alt="litecoin" />
+                <img src="img/stellar.svg" alt="stellar" />
+                <img src="img/ethereum.svg" alt="ethereum" />
+              </span>
+              <br />
+              Technologies used: ReactJs, NodeJs, Coniqvest, Netlify, Heroku.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/Pizzeria-45" target="blank">
+                  Source code
+                </a>
+                <a href="https://pizzeria-45.netlify.app/" target="blank">
+                  Live demo
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
           <h4 className="heading-4 card__heading">Forkify</h4>
 
           <div className="card__content">
@@ -123,32 +156,6 @@ function Projects({ darkMode }) {
                   Source code
                 </a>
                 <a href="https://flask-pitches.herokuapp.com/" target="blank">
-                  Live demo
-                </a>
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Pizzeria-45</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              A web application for a fictional pizza restaurant.
-              <br />
-              Users can place their orders, edit the order and place the order upon which the user will be
-              prompted to pay.
-              <br />
-              Technologies used: React, Vanilla JS, Context-Api, Netlify
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Pizzeria-45" target="blank">
-                  Source code
-                </a>
-                <a href="https://pizzeria-45.netlify.app/" target="blank">
                   Live demo
                 </a>
               </span>

@@ -115,6 +115,17 @@ body {
   width: 0.2rem;
 }
 
+.crypto-icons {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.crypto-icons img {
+  width: 1.8rem;
+  margin: 0 1rem;
+}
+
 .heading-3 {
   font-size: 5rem;
 }

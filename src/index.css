@@ -1,7 +1,7 @@
 *,
 ::before,
 ::after {
-  padding: 0%;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -59,7 +59,7 @@ body {
 .card {
   width: 60rem;
   padding: 3rem;
-  padding-left: 4rem;
+  /* padding-left: 4rem; */
   box-shadow: 1px 5px 20px -6px rgba(0, 0, 0, 0.75);
 }
 .card__heading {
@@ -220,12 +220,12 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 .logo__name a {

@@ -39,9 +39,11 @@ function App() {
               <Link to="/">David Kiama</Link>
             </h1>
 
-            <svg className="icon--computer" style={styles.headerIcons}>
+            <img src="img/code.png" alt="Logo Img" className="logo__img" />
+
+            {/* <svg className="icon--computer" style={styles.headerIcons}>
               <use xlinkHref="img/sprite.svg#computer-svgrepo-com"></use>
-            </svg>
+            </svg> */}
           </div>
 
           <nav className={`${displayMenu ? "display_menu" : ""}   nav`}>

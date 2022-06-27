@@ -233,6 +233,11 @@ body {
   color: inherit;
 }
 
+.logo__img {
+  height: 4.2rem;
+  margin-left: 1rem;
+}
+
 .nav {
   flex-grow: 0.4;
   display: flex;

@@ -34,8 +34,8 @@ function Home({ darkMode }) {
               <Link to="/projects">Here</Link> are some of my projects.It's only a drop in the ocean compared
               to the entire list.
               <br />
-              When I'm not infront of my computer I cook, dance, develop relationships with people, the normal
-              stuff 😂
+              When I'm not infront of my computer I love to cook, dance, develop relationships with people,
+              the normal stuff.
               <br />
               My love for code is immutable.
             </p>

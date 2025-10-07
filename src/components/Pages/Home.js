@@ -28,16 +28,17 @@ function Home({ darkMode }) {
               <span className="con--circle"> </span>
             </div>
             <p className="card__text">
-              Hi, I'm David Kiama, a Software Developer that builds for the web. I am an avid learner who
-              continues to seek ways to build human-centered products.
+              I'm David Kiama, a Frontend Developer with 3+ years of experience in React, Next.js,
+              Automated testing and building human-centered web products.
               <br />
-              <Link to="/projects">Here</Link> are some of my projects.It's only a drop in the ocean compared
-              to the entire list.
+              I’m all about growth, whether I'm diving into a new framework (like Ember.js) or
+              contributing to CI/CD pipelines. Have a look at my work &nbsp;
+              <Link to="/projects">Here</Link> .
               <br />
-              When I'm not infront of my computer I love to cook, dance, develop relationships with people,
-              the normal stuff.
+              When I log off, I'm probably cooking, dancing, or automating tasks... which usually
+              takes longer when doing them manually .
               <br />
-              My love for code is immutable.
+              Let's connect!
             </p>
           </div>
         </div>
@@ -53,7 +54,7 @@ function Home({ darkMode }) {
             </svg>
           </a>
 
-          <a target="blank" href="https://wa.me/254799760500?text=Dev">
+          <a target="blank" href="https://wa.me/254799760500?text=Hello David">
             <svg className={`${darkMode ? "dark-3" : ""} social-icon`}>
               <use xlinkHref="img/sprite.svg#whatsapp-svgrepo-com"></use>
             </svg>
@@ -81,15 +82,15 @@ function Home({ darkMode }) {
             </div>
             <div className="card__text">
               <p>
-                I have a strong background in web development and I am very experienced in the following
-                technologies:
+                I have a strong background in web development and I am very experienced in the
+                following technologies:
               </p>
 
               <ul>
-                <li>Front-end: HTML, CSS, JavaScript, React, Angular</li>
+                <li>Front-end: HTML, CSS, JavaScript, React, Angular Ember</li>
                 <li>Back-end: Django, Flask, Node.js, Express</li>
                 <li>Databases: PostgreSQL, MongoDB </li>
-                <li>Other: API development, Git, GitHub, Heroku, Netlify, Figma</li>
+                <li>Other: API development, Automated testing, Algorithmic Trading.</li>
               </ul>
             </div>
           </div>

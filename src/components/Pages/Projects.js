@@ -33,6 +33,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 48 commits </span>
             </p>
           </div>
         </div>
@@ -58,6 +59,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 49 commits </span>
             </p>
           </div>
         </div>
@@ -83,6 +85,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 42 commits </span>
             </p>
           </div>
         </div>
@@ -97,8 +100,8 @@ function Projects({ darkMode }) {
             <p className="card__text">
               Foto Moto is a Web image gallery.
               <br />
-              Images are categorized with location and category. One can search and filter images according to
-              category.
+              Images are categorized with location and category. One can search and filter images
+              according to category.
               <br />
               Technologies used: PostgreSQL, Django, Heroku.
               <span className="live-links">
@@ -109,6 +112,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 57 commits </span>
             </p>
           </div>
         </div>
@@ -134,6 +138,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 36 commits </span>
             </p>
           </div>
         </div>
@@ -159,6 +164,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 40 commits </span>
             </p>
           </div>
         </div>
@@ -184,6 +190,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 22 commits </span>
             </p>
           </div>
         </div>
@@ -209,6 +216,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 3 years ago · 24 commits </span>
             </p>
           </div>
         </div>
@@ -222,7 +230,8 @@ function Projects({ darkMode }) {
             </div>
 
             <p className="card__text">
-              Burger Palace is a fictional restaurant website, that sells Fingerlicking Good Burgers.
+              Burger Palace is a fictional restaurant website, that sells Fingerlicking Good
+              Burgers.
               <br />
               This is just a replica. The original design was done by &nbsp;
               <a href="https://github.com/james-muriithi" target="blank">
@@ -238,6 +247,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 4 years ago · 21 commits </span>
             </p>
           </div>
         </div>
@@ -250,8 +260,8 @@ function Projects({ darkMode }) {
               <span className="con--circle"> </span>
             </div>
             <p className="card__text">
-              Cute Pet Landing page of a fictional website. The idea behind cute pet was to take care of
-              abandoned pets.
+              Cute Pet Landing page of a fictional website. The idea behind cute pet was to take
+              care of abandoned pets.
               <br />
               This was a joint project between
               <a href="https://github.com/Lyonsmasawa"> Lyons Masawa</a> and I.
@@ -265,6 +275,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 4 years ago · 3 commits </span>
             </p>
           </div>
         </div>
@@ -290,6 +301,7 @@ function Projects({ darkMode }) {
                   Live demo
                 </a>
               </span>
+              <span className="card__last-updated">Last updated · 4 years ago · 20 commits </span>
             </p>
           </div>
         </div>

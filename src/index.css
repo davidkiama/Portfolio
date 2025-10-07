@@ -80,6 +80,13 @@ body {
   list-style: none;
   margin-left: 2rem;
 }
+
+.card__last-updated {
+  font-size: 1.4rem;
+  color: grey;
+  margin-top: 1rem;
+  float: right;
+}
 .card a {
   text-decoration: none;
   background-image: linear-gradient(to right, green, green);

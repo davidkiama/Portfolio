@@ -28,15 +28,14 @@ function Home({ darkMode }) {
               <span className="con--circle"> </span>
             </div>
             <p className="card__text">
-              I'm David Kiama, a Frontend Developer with 3+ years of experience in React, Next.js,
-              Automated testing and building human-centered web products.
+              I'm David Kiama, a Frontend Developer with 3+ years of experience in Ember.js, React,
+              Next.js, Automated testing and building human-centered web products.
               <br />
-              I’m all about growth, whether I'm diving into a new framework (like Ember.js) or
-              contributing to CI/CD pipelines. Have a look at my work &nbsp;
+              I’m all about growth, and I am currently looking into automation with Python in the
+              finance space. Have a look at my work &nbsp;
               <Link to="/projects">Here</Link> .
               <br />
-              When I log off, I'm probably cooking, dancing, or automating tasks... which usually
-              takes longer when doing them manually .
+              Impossible is Nothing .
               <br />
               Let's connect!
             </p>

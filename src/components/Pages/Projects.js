@@ -5,6 +5,33 @@ function Projects({ darkMode }) {
     <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-work">
         <div className="card">
+          <h4 className="heading-4 card__heading">KiamaTrading</h4>
+
+          <div className="card__content">
+            <div className="con">
+              <span className="con--circle"> </span>
+            </div>
+            <p className="card__text">
+              Mastering financial pattern recognition with Python.
+              <br />
+              Able to analyze, open and close trades and then analyze the success of the trading
+              algorithm.
+              <br />
+              Technologies used: Python, Numpy, Yahoo Finance.
+              <span className="live-links">
+                <a href="https://github.com/davidkiama/KiamaTrading" target="blank">
+                  Source code
+                </a>
+                <a href="https://github.com/davidkiama/KiamaTrading" target="blank">
+                  Live demo
+                </a>
+              </span>
+              <span className="card__last-updated">Last updated · Recently</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card">
           <h4 className="heading-4 card__heading">Pizzeria-45</h4>
 
           <div className="card__content">

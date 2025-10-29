@@ -33,13 +33,19 @@ const fetchRepoData = async (url) => {
     if (!match) return null;
     const [, owner, repo] = match;
 
-    //  Fetch repo details
-    const repoRes = await fetch(`${GITHUB_API}/${owner}/${repo}`);
+    const headers = {
+      Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+    };
+
+    // Fetch repo details
+    const repoRes = await fetch(`${GITHUB_API}/${owner}/${repo}`, { headers });
     if (!repoRes.ok) throw new Error("Failed to fetch repo data");
     const repoData = await repoRes.json();
 
-    // Fetch commits and count total via Link header
-    const commitsRes = await fetch(`${GITHUB_API}/${owner}/${repo}/commits?per_page=1`);
+    // Fetch commits and count total
+    const commitsRes = await fetch(`${GITHUB_API}/${owner}/${repo}/commits?per_page=1`, {
+      headers,
+    });
     if (!commitsRes.ok) throw new Error("Failed to fetch commits");
 
     let totalCommits = 1;

@@ -1,337 +1,219 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const GITHUB_API = "https://api.github.com/repos";
+
+// 🧮 Helper — format time difference to “x years/months/weeks/days ago”
+function timeAgo(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  const intervals = [
+    { label: "year", seconds: 31536000 },
+    { label: "month", seconds: 2592000 },
+    { label: "week", seconds: 604800 },
+    { label: "day", seconds: 86400 },
+    { label: "hour", seconds: 3600 },
+    { label: "minute", seconds: 60 },
+  ];
+
+  for (const interval of intervals) {
+    const count = Math.floor(seconds / interval.seconds);
+    if (count >= 1) {
+      return `${count} ${interval.label}${count > 1 ? "s" : ""} ago`;
+    }
+  }
+
+  return "just now";
+}
+
+// 🧩 Fetch repository info and commits count
+const fetchRepoData = async (url) => {
+  try {
+    const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+    if (!match) return null;
+    const [, owner, repo] = match;
+
+    //  Fetch repo details
+    const repoRes = await fetch(`${GITHUB_API}/${owner}/${repo}`);
+    if (!repoRes.ok) throw new Error("Failed to fetch repo data");
+    const repoData = await repoRes.json();
+
+    // Fetch commits and count total via Link header
+    const commitsRes = await fetch(`${GITHUB_API}/${owner}/${repo}/commits?per_page=1`);
+    if (!commitsRes.ok) throw new Error("Failed to fetch commits");
+
+    let totalCommits = 1;
+    const link = commitsRes.headers.get("Link");
+    if (link) {
+      const match = link.match(/&page=(\d+)>; rel="last"/);
+      if (match) totalCommits = parseInt(match[1], 10);
+    }
+
+    return {
+      updatedAt: repoData.updated_at,
+      commits: totalCommits,
+    };
+  } catch (err) {
+    console.error("Failed to fetch repo data:", err);
+    return null;
+  }
+};
+
+// Individual Project Card
+const ProjectCard = ({ title, description, tech, github, live }) => {
+  const [lastUpdated, setLastUpdated] = useState("Fetching...");
+  const [commits, setCommits] = useState(null);
+
+  useEffect(() => {
+    const getRepoDetails = async () => {
+      const data = await fetchRepoData(github);
+      if (data?.updatedAt) {
+        setLastUpdated(timeAgo(data.updatedAt));
+      } else {
+        setLastUpdated("Unknown");
+      }
+      if (data?.commits) setCommits(data.commits);
+    };
+    getRepoDetails();
+  }, [github]);
+
+  return (
+    <div className="card">
+      <h4 className="heading-4 card__heading">{title}</h4>
+      <div className="card__content">
+        <div className="con">
+          <span className="con--circle"> </span>
+        </div>
+        <p className="card__text">
+          {description}
+          <br />
+          Technologies used: {tech}
+          <span className="live-links">
+            <a href={github} target="_blank" rel="noreferrer">
+              Source code
+            </a>
+            <a href={live} target="_blank" rel="noreferrer">
+              Live demo
+            </a>
+          </span>
+          <span className="card__last-updated">
+            Last updated · {lastUpdated}
+            {commits !== null && ` · ${commits} commits`}
+          </span>
+        </p>
+      </div>
+    </div>
+  );
+};
 
 function Projects({ darkMode }) {
+  const projects = [
+    {
+      title: "KiamaTrading",
+      description: `Mastering financial pattern recognition with Python. Analyzes, 
+        opens and closes trades, and evaluates trading algorithm performance.`,
+      tech: "Python, Numpy, Yahoo Finance",
+      github: "https://github.com/davidkiama/KiamaTrading",
+      live: "https://github.com/davidkiama/KiamaTrading",
+    },
+
+    {
+      title: "Bankist",
+      description: `Banking web app for deposits, withdrawals, loan requests, 
+        and money transfers between users.`,
+      tech: "MongoDB, Express, React, NodeJs, Netlify",
+      github: "https://github.com/davidkiama/Bankist",
+      live: "https://bankist-kiama.netlify.app/",
+    },
+    {
+      title: "Pizzeria-45",
+      description: `A web application for a fictional pizza restaurant. Users can 
+        place, edit, and pay for orders using cryptocurrency.`,
+      tech: "ReactJs, NodeJs, Coniqvest, Netlify, Heroku",
+      github: "https://github.com/davidkiama/Pizzeria-45",
+      live: "https://pizzeria-45.netlify.app/",
+    },
+    {
+      title: "Forkify",
+      description: `Recipe web application where users can search, 
+      bookmark, and add recipes.`,
+      tech: "Vanilla JS, Heroku, Surge.sh",
+      github: "https://github.com/davidkiama/Forkify",
+      live: "https://forkify-kiama.surge.sh/",
+    },
+
+    {
+      title: "Foto Moto",
+      description:
+        "Web image gallery categorized by location and category. Users can search and filter images.",
+      tech: "PostgreSQL, Django, Heroku",
+      github: "https://github.com/davidkiama/Foto-Moto-",
+      live: "https://foto-moto.herokuapp.com/",
+    },
+    {
+      title: "Neighbourhood",
+      description:
+        "Web app allowing users to find and share posts in their neighbourhood and view local businesses.",
+      tech: "PostgreSQL, Django, Heroku",
+      github: "https://github.com/davidkiama/NeighbourHood",
+      live: "https://neighbourhood-xxiv.herokuapp.com/",
+    },
+    {
+      title: "Pitches",
+      description:
+        "Flask web app where users can create, vote, and comment on pitches shared on the platform.",
+      tech: "PostgreSQL, Flask, Heroku",
+      github: "https://github.com/davidkiama/Flask-Pitches",
+      live: "https://flask-pitches.herokuapp.com/",
+    },
+    {
+      title: "Quotes",
+      description:
+        "Web app showcasing user-created quotes. Users can create, upvote, downvote, or delete quotes.",
+      tech: "Angular, TypeScript, CSS",
+      github: "https://github.com/davidkiama/Quotes",
+      live: "https://davidkiama.github.io/Quotes/",
+    },
+    {
+      title: "Github Search",
+      description:
+        "Displays a GitHub user's profile and repositories. Users can search for GitHub accounts by username.",
+      tech: "Angular, TypeScript, CSS, GitHub API",
+      github: "https://github.com/davidkiama/Github-Search",
+      live: "https://davidkiama.github.io/Github-Search/",
+    },
+    {
+      title: "Burger Palace",
+      description:
+        "A fictional restaurant website for Fingerlicking Good Burgers, inspired by a design by Justin Murithi.",
+      tech: "HTML, CSS",
+      github: "https://github.com/davidkiama/Burger-Palace",
+      live: "https://davidkiama.github.io/Burger-Palace/",
+    },
+    {
+      title: "Cute-Pet",
+      description:
+        "Landing page for a fictional pet care website, created in collaboration with Lyons Masawa.",
+      tech: "HTML, CSS",
+      github: "https://github.com/davidkiama/Cute-Pet",
+      live: "https://davidkiama.github.io/Cute-Pet/",
+    },
+    {
+      title: "Letuce Eat",
+      description:
+        "Fictional restaurant website promoting healthy and affordable dishes inspired by Moringa Restaurant.",
+      tech: "HTML, CSS",
+      github: "https://github.com/davidkiama/Letuce-Eat",
+      live: "https://davidkiama.github.io/Letuce-Eat/",
+    },
+  ];
+
   return (
     <main className={`${darkMode ? "dark-2" : ""} main`}>
       <section className="content content-work">
-        <div className="card">
-          <h4 className="heading-4 card__heading">KiamaTrading</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Mastering financial pattern recognition with Python.
-              <br />
-              Able to analyze, open and close trades and then analyze the success of the trading
-              algorithm.
-              <br />
-              Technologies used: Python, Numpy, Yahoo Finance.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/KiamaTrading" target="blank">
-                  Source code
-                </a>
-                <a href="https://github.com/davidkiama/KiamaTrading" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · Recently</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Pizzeria-45</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              A web application for a fictional pizza restaurant.
-              <br />
-              Users can place their orders, edit the order and pay for the the pizza using crypto.
-              <br />
-              Crypto accepted
-              <span className="crypto-icons">
-                <img src="img/bitcoin.svg" alt="bitcoin" />
-                <img src="img/litecoin.svg" alt="litecoin" />
-                <img src="img/stellar.svg" alt="stellar" />
-                <img src="img/ethereum.svg" alt="ethereum" />
-              </span>
-              <br />
-              Technologies used: ReactJs, NodeJs, Coniqvest, Netlify, Heroku.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Pizzeria-45" target="blank">
-                  Source code
-                </a>
-                <a href="https://pizzeria-45.netlify.app/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 48 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Forkify</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Recipe web application.
-              <br />
-              Users can search for recipes, bookmark recipes they like and add new recipes.
-              <br />
-              Technologies used: Vanilla JS, Heroku, Surge.sh.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Forkify" target="blank">
-                  Source code
-                </a>
-                <a href="https://forkify-kiama.surge.sh/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 49 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Bankist</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Bankist is a banking web application.
-              <br />
-              Users can deposit, withdraw, request for loans and transfer money to other users .
-              <br />
-              Technologies used: MongoDB, Express, React, NodeJs, Netlify.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Bankist" target="blank">
-                  Source code
-                </a>
-                <a href="https://bankist-kiama.netlify.app/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 42 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Foto Moto</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Foto Moto is a Web image gallery.
-              <br />
-              Images are categorized with location and category. One can search and filter images
-              according to category.
-              <br />
-              Technologies used: PostgreSQL, Django, Heroku.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Foto-Moto-" target="blank">
-                  Source code
-                </a>
-                <a href="https://foto-moto.herokuapp.com/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 57 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Neighbourhood</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              A web application that allows users to find and share posts in their neighbourhood.
-              <br />
-              Neighbours can also view the list of business in the neighbourhood.
-              <br />
-              Technologies used: PostgreSQL, Django, Heroku.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/NeighbourHood" target="blank">
-                  Source code
-                </a>
-                <a href="https://neighbourhood-xxiv.herokuapp.com/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 36 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Pitches</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Flask web app that displays pitches created on the platform by them and other users.
-              <br />
-              Users can create, upvote, downwnvote or comment on pitches.
-              <br />
-              Technologies used: PostgreSQL, Flask, Heroku.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Flask-Pitches" target="blank">
-                  Source code
-                </a>
-                <a href="https://flask-pitches.herokuapp.com/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 40 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Quotes</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Web application that showcases quotes created on the platform.
-              <br />
-              One can create a upvote, downwnvote or delete a quote.
-              <br />
-              Technologies used: Angular, TypeScript, CSS.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Quotes" target="blank">
-                  Source code
-                </a>
-                <a href="https://davidkiama.github.io/Quotes/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 22 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Github Search</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Web application that displays a Github user and all his/her public repositories.
-              <br />
-              One can search for a users using usernames.
-              <br />
-              Technologies used: Angular, TypeScript, CSS, Github.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Github-Search" target="blank">
-                  Source code
-                </a>
-                <a href="https://davidkiama.github.io/Github-Search/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 3 years ago · 24 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Burger Palace</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-
-            <p className="card__text">
-              Burger Palace is a fictional restaurant website, that sells Fingerlicking Good
-              Burgers.
-              <br />
-              This is just a replica. The original design was done by &nbsp;
-              <a href="https://github.com/james-muriithi" target="blank">
-                Justin Murithi
-              </a>
-              <br />
-              Technologies used : HTML & CSS
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Burger-Palace" target="blank">
-                  Source code
-                </a>
-                <a href="https://davidkiama.github.io/Burger-Palace/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 4 years ago · 21 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Cute-Pet</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Cute Pet Landing page of a fictional website. The idea behind cute pet was to take
-              care of abandoned pets.
-              <br />
-              This was a joint project between
-              <a href="https://github.com/Lyonsmasawa"> Lyons Masawa</a> and I.
-              <br />
-              Technologies used: HTML & CSS.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Cute-Pet" target="blank">
-                  Source code
-                </a>
-                <a href="https://davidkiama.github.io/Cute-Pet/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 4 years ago · 3 commits </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <h4 className="heading-4 card__heading">Letuce Eat</h4>
-
-          <div className="card__content">
-            <div className="con">
-              <span className="con--circle"> </span>
-            </div>
-            <p className="card__text">
-              Letuce Eat is a fictional website based on the idea of Moringa Restaurant.
-              <br />
-              Letuce Eat offers the best, healthy and affordable dishes.
-              <br />
-              Technologies used include: HTML & CSS.
-              <span className="live-links">
-                <a href="https://github.com/davidkiama/Letuce-Eat" target="blank">
-                  Source code
-                </a>
-                <a href="https://davidkiama.github.io/Letuce-Eat/" target="blank">
-                  Live demo
-                </a>
-              </span>
-              <span className="card__last-updated">Last updated · 4 years ago · 20 commits </span>
-            </p>
-          </div>
-        </div>
+        {projects.map((p, i) => (
+          <ProjectCard key={i} {...p} />
+        ))}
       </section>
     </main>
   );

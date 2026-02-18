@@ -115,12 +115,11 @@ const ProjectCard = ({ title, description, tech, github, live }) => {
 function Projects({ darkMode }) {
   const projects = [
     {
-      title: "KiamaTrading",
-      description: `Mastering financial pattern recognition with Python. Analyzes, 
-        opens and closes trades, and evaluates trading algorithm performance.`,
-      tech: "Python, Numpy, Yahoo Finance",
-      github: "https://github.com/davidkiama/KiamaTrading",
-      live: "https://github.com/davidkiama/KiamaTrading",
+      title: "Daze-T",
+      description: `We buy small Crypto assets and remit the payment to Safaricom M-pesa or Airtel money.`,
+      tech: "Python-Flask, ReactJs, Crypto",
+      github: "https://github.com/davidkiama/api-py-daze-t",
+      live: "https://daze-t.com/",
     },
 
     {

@@ -116,7 +116,7 @@ function Projects({ darkMode }) {
   const projects = [
     {
       title: "Daze-T",
-      description: `We buy small crypto assets and remit payments via Safaricom M-Pesa or Airtel Money. 
+      description: `We buy small crypto assets and remit payments via Safaricom M-Pesa or Airtel Money.
         This encourages crypto enthusiasts with small amounts.`,
       tech: "Python (Flask), React.js, Crypto",
       github: "https://github.com/davidkiama/api-py-daze-t",

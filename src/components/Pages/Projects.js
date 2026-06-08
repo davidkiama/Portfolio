@@ -124,6 +124,15 @@ function Projects({ darkMode }) {
     },
 
     {
+      title: "KiamaTrading",
+      description: `Trading stretegy that is anchored on Time then Price. Looking for trading 
+      opportunities(reversals) at NY open`,
+      tech: "Python (FastApi), Oanda, ",
+      github: "https://github.com/davidkiama/KiamaTrading",
+      live: "https://daze-t.com/",
+    },
+
+    {
       title: "Bankist",
       description: `Banking web app for deposits, withdrawals, loan requests, 
         and money transfers between users.`,

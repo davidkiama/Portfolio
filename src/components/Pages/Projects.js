@@ -126,10 +126,10 @@ function Projects({ darkMode }) {
     {
       title: "KiamaTrading",
       description: `Trading stretegy that is anchored on Time then Price. Looking for trading 
-      opportunities(reversals) at NY open`,
+      opportunities(reversals) at NY open. Github Link below is a sample, more work is in progress.`,
       tech: "Python (FastApi), Oanda, ",
-      github: "https://github.com/davidkiama/KiamaTrading",
-      live: "https://daze-t.com/",
+      github: "https://github.com/davidkiama/KiamaTradingLite",
+      live: "https://github.com/davidkiama/KiamaTradingLite",
     },
 
     {
